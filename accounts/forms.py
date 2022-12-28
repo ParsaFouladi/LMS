@@ -8,9 +8,10 @@ from django.db import models
 class CreateTeacherForm(UserCreationForm):
     # name=models.CharField(max_length=50)
     # surname=models.CharField(max_length=50,null=True)
+    email=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"email"}))
     class Meta:
         model=User
-        fields=['email','first_name', 'last_name','password1','password2']
+        fields=['username','email','password1','password2','first_name', 'last_name']
     
     def save(self, commit=True):
         user = super().save(commit=commit)
@@ -20,9 +21,10 @@ class CreateTeacherForm(UserCreationForm):
 class CreateStudentForm(UserCreationForm):
     # name=models.CharField(max_length=50)
     # surname=models.CharField(max_length=50,null=True)
+    email=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Email"}))
     class Meta:
         model=User
-        fields=['email','first_name', 'last_name','password1','password2']
+        fields=['email','password1','password2','first_name', 'last_name']
     
     def save(self, commit=True):
         user = super().save(commit=commit)
