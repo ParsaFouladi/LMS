@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <!-- render all elements normally -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- main styling file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="sign-in">
+        <div class="background">
+            <div class="content">
+                <h3>Login</h3>
+                <form action="">
+                    <div class="login-username">
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="login-password">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="button">
+                        <a href="#" class="submit">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            submit
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/sign-in.png' %}" alt="sign-in-img">
+        </div>
+    </div>
+</body>
+</html>
