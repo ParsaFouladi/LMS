@@ -3,11 +3,15 @@ from django.db import models
 # Create your models here.
 from django.db import models
 from django.conf import settings
+from accounts.models import Student,Teacher
 
 
 class Course(models.Model):
     code = models.CharField(max_length=150 , unique=True)
     name=models.CharField(max_length=150)
+
+    student = models.ManyToManyField(Student, null=True)
+    Teacher = models.ManyToManyField(Teacher, null=True)
 
     def __str__(self):
         return self.code

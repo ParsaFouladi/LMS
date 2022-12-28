@@ -2,7 +2,7 @@
 
 # Create your models here.
 from django.db import models
-from admindash.models import Course
+# from admindash.models import Course
 # from django.contrib.auth.models import (
 #     BaseUserManager, AbstractBaseUser
 # )
@@ -54,7 +54,7 @@ from django.contrib.auth.models import User
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    # course = models.ManyToManyField(Course, null=True)
     date_created=models.DateTimeField(auto_now_add=True,null=True)
     is_active = models.BooleanField(default=True)
 
@@ -65,7 +65,7 @@ class Teacher(models.Model):
     first_name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50,null=True)
     email=models.EmailField()
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    # course = models.ManyToManyField(Course, null=True)
     date_created=models.DateTimeField(auto_now_add=True,null=True)
     is_active = models.BooleanField(default=True)
     REQUIRED_FIELDS = ['username','first_name', 'last_name','email']
