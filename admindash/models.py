@@ -6,7 +6,8 @@ from django.conf import settings
 
 
 class Course(models.Model):
-    course = models.CharField(max_length=150 , unique=True)
+    code = models.CharField(max_length=150 , unique=True)
+    name=models.CharField(max_length=150)
 
     def __str__(self):
         return self.course

@@ -21,14 +21,14 @@
     <div class="home">
         <div class="container">
             <div class="home-links">
-                <a class="sign-up-btn" href="sign-up.html">Sign Up</a>
-                <a class="log-in-btn" href="sign-in.html">Login</a>
+                <a class="sign-up-btn" href="{% url 'register' %}">Sign Up</a>
+                <a class="log-in-btn" href="{% url 'login' %}">Login</a>
             </div>
             <div class="heading">
                 <span>Online <br> Examination <br></span> System
             </div>
             <div class="image">
-                <img src="{% static '/media/images/main.png' %}" alt="image">
+                <img src="{% static '/images/main.png' %}" alt="image">
 
 
             </div>
