@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <!-- render all elements normally -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- main styling file -->
+    <link rel="stylesheet" href="{% static 'css/std-dashboard.css' %}">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="std-dashboard">
+        <div class="side-content">
+            <div class="calendar">
+                <div class="calendar-header">
+                  <span class="month-picker" id="month-picker"> May </span>
+                  <div class="year-picker" id="year-picker">
+                    <span class="year-change" id="pre-year">&lt;</span>
+                    <span id="year">2020 </span>
+                    <span class="year-change" id="next-year">&gt;</span>
+                  </div>
+                </div>
+         
+                <div class="calendar-body">
+                  <div class="calendar-week-days">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                  </div>
+                  <div class="calendar-days">
+                  </div>
+                </div>
+                <div class="calendar-footer">
+                </div>
+                <div class="date-time-formate">
+                  <div class="day-text-formate">TODAY</div>
+                  <div class="date-time-value">
+                    <div class="time-formate">02:51:20</div>
+                    <div class="date-formate">23 - july - 2022</div>
+                  </div>
+                </div>
+                <div class="month-list"></div>
+            </div>
+            <div class="events">
+                <h3>Today's events</h3>
+                <div class="events-content">Event's Content</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="head">
+              <h2>course overview</h2>
+              <div class="icons">
+                <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+                <img src="{% static 'images/avatar.png' %}" alt="profile pic">
+              </div>
+            </div>
+            <div class="swiper-container">
+              <div class="content">
+                <div class="card">{{total_course}}</div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/std-dashboard.js' %}"></script>
+</body>
+</html>
