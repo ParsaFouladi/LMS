@@ -54,23 +54,18 @@ from django.contrib.auth.models import User
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_name = models.CharField(max_length=100,unique=True,default="notUsed")
-    first_name=models.CharField(max_length=50)
-    last_name=models.CharField(max_length=50,null=True)
-    email=models.EmailField()
     course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
     date_created=models.DateTimeField(auto_now_add=True,null=True)
     is_active = models.BooleanField(default=True)
-    REQUIRED_FIELDS = ['user_name','first_name', 'last_name','email']
 
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
-    user_name = models.CharField(max_length=100,unique=True,default="notUsed")
+    username = models.CharField(max_length=100,unique=True,default="notUsed")
     first_name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50,null=True)
     email=models.EmailField()
     course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
     date_created=models.DateTimeField(auto_now_add=True,null=True)
     is_active = models.BooleanField(default=True)
-    REQUIRED_FIELDS = ['user_name','first_name', 'last_name','email']
+    REQUIRED_FIELDS = ['username','first_name', 'last_name','email']

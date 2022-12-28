@@ -26,6 +26,11 @@
                 <h2>Become one of our members</h2>
                 
                 <div class="box">
+                    <i class="fa-solid fa-signature"></i>
+                    {{ form.username }}
+                </div>
+
+                <div class="box">
                     <i class="fa-solid fa-envelope"></i>
                     {{ form.email }}
                 </div>
@@ -49,23 +54,13 @@
                     
                     {{ form.last_name }}
                 </div>
-                
             
-                    {{ form.username }}
-            
-                
-                
-                
-                
-                <div class="radio-box">
-                    <input type="radio" name="role" id="role_1",value="1">
-                    <label for="Student">Student</label>
-                    <input type="radio" name="role" id="role_2",value="2">
-                    <label for="Teacher">Teacher</label>
-                
-                </div>
                 <button type="submit">Register</button>
             </form>
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
+            {{ form.errors }}
         </div>
             </div>
             <div class="image">
