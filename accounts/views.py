@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
 from django.template.context_processors import request
 
-from admindash.models import Course
+from admindash.models import Course,Question
 from .forms import CreateStudentForm
 from django.contrib import messages
 import django.contrib.auth as au
