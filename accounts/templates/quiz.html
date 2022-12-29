@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- render all elements normally -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- main styling file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz">
+        <div class="container">
+            <div class="main">
+                <div class="info">
+                    <div class="category">Category: <span>HTML</span></div>
+                    <div class="count">You have <span>10</span> questions</div>
+                </div>
+                <div class="question-area">
+
+                </div>
+                <div class="answers-area">
+
+                </div>
+                <button id="btn">submit answer</button>
+            </div>
+             <h4 class="card-title">Exam Details :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Course : {{course.course_name}}</li>
+                            <li>Total Question : {{total_questions}}</li>
+                            <li>Total Marks : {{total_marks}}</li>
+                        </ul>
+                    <p></p>
+            <div class="sub">
+                <div class="spans">
+                    <h3>Questions Covered</h3>
+                    <div class="bullets">
+                        
+                    </div>
+                </div>
+                <div class="countdown">
+                    <h3>Remaining Time</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'quiz.js' %}"></script>
+</body>
+</html>

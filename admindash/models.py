@@ -7,14 +7,16 @@ from accounts.models import Student,Teacher
 
 
 class Course(models.Model):
-    code = models.CharField(max_length=150 , unique=True)
-    name=models.CharField(max_length=150)
+    code = models.CharField(max_length=150, unique=True)
+    name = models.CharField(max_length=150, default=True)
 
-    student = models.ManyToManyField(Student, null=True)
-    Teacher = models.ManyToManyField(Teacher, null=True)
+
+    student = models.ManyToManyField(Student)
+    Teacher = models.ManyToManyField(Teacher)
 
     def __str__(self):
         return self.code
+
 
 
 class Exam(models.Model):
@@ -25,9 +27,11 @@ class Exam(models.Model):
 
 
 class Question(models.Model):
+    question_id = models.CharField(max_length=150, unique=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
     questions = models.TextField()
+  #  mark = models.PositiveIntegerField(default= True)
     answers = models.CharField(max_length=20)
     option_a = models.TextField()
     option_b = models.TextField()
