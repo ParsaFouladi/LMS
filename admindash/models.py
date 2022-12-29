@@ -19,13 +19,14 @@ class Course(models.Model):
 
 class Exam(models.Model):
     exam = models.CharField(max_length=100)
+    name=models.CharField(max_length=150,default='not defined')
+    course=models.ForeignKey(Course,on_delete=models.CASCADE,default=1)
 
     def __str__(self):
-        return self.exam
+        return self.name
 
 
 class Question(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
     questions = models.TextField()
     answers = models.CharField(max_length=20)
