@@ -13,7 +13,7 @@ class Course(models.Model):
     student = models.ManyToManyField(Student, null=True)
     Teacher = models.ManyToManyField(Teacher, null=True)
 
-    def __str__(self):
+    def _str_(self):
         return self.code
 
 
@@ -22,7 +22,7 @@ class Exam(models.Model):
     name=models.CharField(max_length=150,default='not defined')
     course=models.ForeignKey(Course,on_delete=models.CASCADE,default=1)
 
-    def __str__(self):
+    def _str_(self):
         return self.name
 
 
@@ -35,7 +35,7 @@ class Question(models.Model):
     option_c = models.TextField()
     option_d = models.TextField()
 
-    def __str__(self):
+    def _str_(self):
         return self.questions
 
 
@@ -45,5 +45,5 @@ class Answer(models.Model):
     answer = models.CharField(max_length=20)
     date = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def _str_(self):
         return self.answer
