@@ -13,7 +13,7 @@ class Course(models.Model):
     student = models.ManyToManyField(Student, null=True)
     Teacher = models.ManyToManyField(Teacher, null=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.code
 
 
@@ -22,7 +22,7 @@ class Exam(models.Model):
     name=models.CharField(max_length=150,default='not defined')
     course=models.ForeignKey(Course,on_delete=models.CASCADE,default=1)
 
-    def _str_(self):
+    def __str__(self):
         return self.name
 
 
